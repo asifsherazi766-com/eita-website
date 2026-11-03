@@ -6,24 +6,24 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Theme 1: 🔴 Red (Signature EITA / TikTok Crimson #FE2C55) */
-    --color-primary: #FE2C55;
-    --color-primary-hover: #e02449;
-    --color-primary-rgb: 254, 44, 85;
-    --color-accent: #25F4EE;
-    --app-bg: #000000;
-    --surface-bg: #0f0f0f;
-    --surface-elevated: #1a1a1a;
-    --surface-input: #262626;
-    --text-main: #ffffff;
-    --text-muted: #a3a3a3;
-    --border-subtle: rgba(255, 255, 255, 0.12);
-    --nav-bg: rgba(0, 0, 0, 0.95);
-    --heart-color: #FE2C55;
-    --plus-left: #25F4EE;
-    --plus-right: #FE2C55;
-    --plus-center-bg: #ffffff;
-    --plus-center-text: #000000;
+/* Theme 1 - 👑 EITA QUEEN LUXE - Pearl & Royal Gold (Signature) */
+  --color-primary: #D4AF37; /* Royal Gold */
+  --color-primary-hover: #B8962F;
+  --color-primary-rgb: 212, 175, 55;
+  --color-accent: #9B59B6; /* Royal Amethyst */
+  --app-bg: #FFFBF5; /* Pearl Cream */
+  --surface-bg: #FFFFFF;
+  --surface-elevated: #FFF8F0; /* Soft Ivory */
+  --surface-input: #FDF2E9;
+  --text-main: #2C1A2D; /* Deep Plum - Queen Text */
+  --text-muted: #9C8A9E;
+  --border-subtle: rgba(212, 175, 55, 0.18);
+  --nav-bg: rgba(255, 251, 245, 0.92);
+  --heart-color: #D4AF37;
+  --plus-left: #9B59B6;
+  --plus-right: #D4AF37;
+  --plus-center-bg: #2C1A2D;
+  --plus-center-text: #FFD700;
   }
 
   /* Theme 2: 🟢 Green (Emerald & Mint #10B981) */
@@ -361,3 +361,9 @@
 .animate-note {
   animation: note-float 2.5s ease-out infinite;
 }
+/* Queen Glow Effect */
+body {
+  background: radial-gradient(1200px at 10% -10%, rgba(212,175,55,0.12), transparent),
+              radial-gradient(1000px at 90% 10%, rgba(155,89,182,0.10), transparent),
+              var(--app-bg) !important;
+  }
