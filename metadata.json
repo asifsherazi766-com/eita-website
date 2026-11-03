@@ -1,0 +1,6 @@
+{
+  "name": "EITA - TikTok Clone & Live Stream Platform",
+  "description": "Production-ready TikTok clone with For You feed, Photo Mode, Duet & Stitch, Live PK Battles, 12-Seat Voice Rooms, EITA Coin Gifting, JazzCash/Easypaisa Recharges, and Host Withdrawals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

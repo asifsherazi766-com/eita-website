@@ -1,0 +1,363 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Theme 1: 🔴 Red (Signature EITA / TikTok Crimson #FE2C55) */
+    --color-primary: #FE2C55;
+    --color-primary-hover: #e02449;
+    --color-primary-rgb: 254, 44, 85;
+    --color-accent: #25F4EE;
+    --app-bg: #000000;
+    --surface-bg: #0f0f0f;
+    --surface-elevated: #1a1a1a;
+    --surface-input: #262626;
+    --text-main: #ffffff;
+    --text-muted: #a3a3a3;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --nav-bg: rgba(0, 0, 0, 0.95);
+    --heart-color: #FE2C55;
+    --plus-left: #25F4EE;
+    --plus-right: #FE2C55;
+    --plus-center-bg: #ffffff;
+    --plus-center-text: #000000;
+  }
+
+  /* Theme 2: 🟢 Green (Emerald & Mint #10B981) */
+  .theme-green {
+    --color-primary: #10B981;
+    --color-primary-hover: #059669;
+    --color-primary-rgb: 16, 185, 129;
+    --color-accent: #34D399;
+    --app-bg: #040D08;
+    --surface-bg: #091C12;
+    --surface-elevated: #112A1D;
+    --surface-input: #193829;
+    --text-main: #ffffff;
+    --text-muted: #6EE7B7;
+    --border-subtle: rgba(16, 185, 129, 0.25);
+    --nav-bg: rgba(4, 13, 8, 0.95);
+    --heart-color: #10B981;
+    --plus-left: #34D399;
+    --plus-right: #10B981;
+    --plus-center-bg: #ffffff;
+    --plus-center-text: #040D08;
+  }
+
+  /* Theme 3: 🔴 Red (Signature EITA / TikTok Crimson #FE2C55) */
+  .theme-red {
+    --color-primary: #FE2C55;
+    --color-primary-hover: #e02449;
+    --color-primary-rgb: 254, 44, 85;
+    --color-accent: #25F4EE;
+    --app-bg: #000000;
+    --surface-bg: #0f0f0f;
+    --surface-elevated: #1a1a1a;
+    --surface-input: #262626;
+    --text-main: #ffffff;
+    --text-muted: #a3a3a3;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --nav-bg: rgba(0, 0, 0, 0.95);
+    --heart-color: #FE2C55;
+    --plus-left: #25F4EE;
+    --plus-right: #FE2C55;
+    --plus-center-bg: #ffffff;
+    --plus-center-text: #000000;
+  }
+
+  /* Theme 4: 🔵 Blue (Electric Cyan & Royal Blue #0284C7) */
+  .theme-blue {
+    --color-primary: #0284C7;
+    --color-primary-hover: #0369a1;
+    --color-primary-rgb: 2, 132, 199;
+    --color-accent: #38BDF8;
+    --app-bg: #030712;
+    --surface-bg: #091328;
+    --surface-elevated: #11203E;
+    --surface-input: #1E293B;
+    --text-main: #ffffff;
+    --text-muted: #93C5FD;
+    --border-subtle: rgba(56, 189, 248, 0.25);
+    --nav-bg: rgba(3, 7, 18, 0.95);
+    --heart-color: #0284C7;
+    --plus-left: #38BDF8;
+    --plus-right: #0284C7;
+    --plus-center-bg: #ffffff;
+    --plus-center-text: #030712;
+  }
+
+  /* Theme 5: ⚪ White (Pure White Light Mode #FFFFFF) */
+  .theme-white {
+    --color-primary: #FE2C55;
+    --color-primary-hover: #e02449;
+    --color-primary-rgb: 254, 44, 85;
+    --color-accent: #0284c7;
+    --app-bg: #ffffff;
+    --surface-bg: #f8fafc;
+    --surface-elevated: #ffffff;
+    --surface-input: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-subtle: rgba(15, 23, 42, 0.12);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --heart-color: #FE2C55;
+    --plus-left: #00F2FE;
+    --plus-right: #FE2C55;
+    --plus-center-bg: #0f172a;
+    --plus-center-text: #ffffff;
+  }
+
+  /* Theme 6: 🔘 Light Grey (Minimal Platinum #E5E7EB / #F3F4F6) */
+  .theme-light-grey {
+    --color-primary: #4F46E5;
+    --color-primary-hover: #4338ca;
+    --color-primary-rgb: 79, 70, 229;
+    --color-accent: #06B6D4;
+    --app-bg: #f3f4f6;
+    --surface-bg: #e5e7eb;
+    --surface-elevated: #ffffff;
+    --surface-input: #e2e8f0;
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --border-subtle: rgba(0, 0, 0, 0.14);
+    --nav-bg: rgba(243, 244, 246, 0.96);
+    --heart-color: #4F46E5;
+    --plus-left: #06B6D4;
+    --plus-right: #4F46E5;
+    --plus-center-bg: #ffffff;
+    --plus-center-text: #111827;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--app-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* ==============================================================
+   UNIVERSAL THEME OVERRIDES (Totally replaces old hardcoded theme)
+   ============================================================== */
+
+/* White and Light Grey Canvas Overrides */
+.theme-white .bg-black,
+.theme-light-grey .bg-black {
+  background-color: var(--app-bg) !important;
+  color: var(--text-main) !important;
+}
+
+.theme-white .bg-neutral-950,
+.theme-light-grey .bg-neutral-950 {
+  background-color: var(--surface-bg) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.theme-white .bg-neutral-900,
+.theme-light-grey .bg-neutral-900 {
+  background-color: var(--surface-elevated) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.theme-white .bg-neutral-800,
+.theme-light-grey .bg-neutral-800 {
+  background-color: var(--surface-input) !important;
+  color: var(--text-main) !important;
+}
+
+.theme-white .text-white,
+.theme-light-grey .text-white {
+  color: var(--text-main) !important;
+}
+
+.theme-white .text-neutral-200,
+.theme-white .text-neutral-300,
+.theme-light-grey .text-neutral-200,
+.theme-light-grey .text-neutral-300 {
+  color: var(--text-main) !important;
+}
+
+.theme-white .text-neutral-400,
+.theme-white .text-neutral-500,
+.theme-light-grey .text-neutral-400,
+.theme-light-grey .text-neutral-500 {
+  color: var(--text-muted) !important;
+}
+
+.theme-white .border-white\/10,
+.theme-white .border-white\/5,
+.theme-white .border-white\/15,
+.theme-white .border-white\/20,
+.theme-light-grey .border-white\/10,
+.theme-light-grey .border-white\/5,
+.theme-light-grey .border-white\/15,
+.theme-light-grey .border-white\/20 {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Green Theme Atmospheric Canvas Overrides */
+.theme-green .bg-black {
+  background-color: #040D08 !important;
+}
+.theme-green .bg-neutral-950 {
+  background-color: #091C12 !important;
+}
+.theme-green .bg-neutral-900 {
+  background-color: #112A1D !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.theme-green .bg-neutral-800 {
+  background-color: #193829 !important;
+}
+.theme-green .text-neutral-400 {
+  color: #6EE7B7 !important;
+}
+
+/* Blue Theme Atmospheric Canvas Overrides */
+.theme-blue .bg-black {
+  background-color: #030712 !important;
+}
+.theme-blue .bg-neutral-950 {
+  background-color: #091328 !important;
+}
+.theme-blue .bg-neutral-900 {
+  background-color: #11203E !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
+}
+.theme-blue .bg-neutral-800 {
+  background-color: #1E293B !important;
+}
+.theme-blue .text-neutral-400 {
+  color: #93C5FD !important;
+}
+
+/* Accent Color Dynamic Re-mapping */
+.theme-green .bg-rose-500,
+.theme-blue .bg-rose-500,
+.theme-light-grey .bg-rose-500 {
+  background-color: var(--color-primary) !important;
+}
+
+.theme-green .hover\:bg-rose-600:hover,
+.theme-blue .hover\:bg-rose-600:hover,
+.theme-light-grey .hover\:bg-rose-600:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+.theme-green .text-rose-500,
+.theme-green .text-rose-400,
+.theme-blue .text-rose-500,
+.theme-blue .text-rose-400,
+.theme-light-grey .text-rose-500,
+.theme-light-grey .text-rose-400 {
+  color: var(--color-primary) !important;
+}
+
+.theme-green .fill-rose-500,
+.theme-blue .fill-rose-500,
+.theme-light-grey .fill-rose-500 {
+  fill: var(--heart-color) !important;
+  color: var(--heart-color) !important;
+}
+
+.theme-green .border-rose-500,
+.theme-blue .border-rose-500,
+.theme-light-grey .border-rose-500 {
+  border-color: var(--color-primary) !important;
+}
+
+/* Preserving Video Player Scrim Legibility */
+.video-scrim-bottom {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Dynamic TikTok Create Plus Button */
+.tiktok-plus-btn {
+  position: relative;
+  width: 45px;
+  height: 28px;
+  background: var(--plus-center-bg, #ffffff) !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.tiktok-plus-btn span {
+  color: var(--plus-center-text, #000000) !important;
+}
+
+.tiktok-plus-btn::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  width: 10px;
+  height: 28px;
+  background: var(--plus-left, #25F4EE) !important;
+  border-radius: 8px 0 0 8px;
+  z-index: -1;
+  transition: background 0.25s ease;
+}
+
+.tiktok-plus-btn::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  width: 10px;
+  height: 28px;
+  background: var(--plus-right, #FE2C55) !important;
+  border-radius: 0 8px 8px 0;
+  z-index: -1;
+  transition: background 0.25s ease;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Spin animation for vinyl sound record */
+@keyframes disc-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: disc-spin 5s linear infinite;
+}
+
+/* Floating musical notes */
+@keyframes note-float {
+  0% {
+    transform: translate(0, 0) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-30px, -60px) scale(1.2);
+    opacity: 0;
+  }
+}
+.animate-note {
+  animation: note-float 2.5s ease-out infinite;
+}
